@@ -1,1 +1,13 @@
-# E-learning-application
+# E-learning-application UI
+
+*COMPANY*: CODTECH IT SOLUTIONS
+
+*NAME*: Aayushman Bhardwaj
+
+*INTERN ID*: CT04DH1636
+
+*DOMAIN*: FRONT END DEVELOPMENT
+
+*DURATION*: 4 WEEKS
+
+*MENTOR*: NEELA SANTOSH
