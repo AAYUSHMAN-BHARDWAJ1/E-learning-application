@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Online Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <svg class="logo-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Graduation Cap -->
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6366f1"/>
+                                <stop offset="50%" style="stop-color:#8b5cf6"/>
+                                <stop offset="100%" style="stop-color:#a855f7"/>
+                            </linearGradient>
+                            <linearGradient id="logoAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#06b6d4"/>
+                                <stop offset="100%" style="stop-color:#3b82f6"/>
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Main cap shape -->
+                        <path d="M30 15 L50 25 L30 35 L10 25 Z" fill="url(#logoGradient)" class="logo-cap"/>
+                        
+                        <!-- Cap top -->
+                        <ellipse cx="30" cy="25" rx="20" ry="6" fill="url(#logoGradient)" opacity="0.8"/>
+                        
+                        <!-- Tassel -->
+                        <circle cx="45" cy="20" r="3" fill="url(#logoAccent)" class="logo-tassel"/>
+                        <line x1="45" y1="23" x2="45" y2="30" stroke="url(#logoAccent)" stroke-width="2" class="logo-string"/>
+                        
+                        <!-- Book pages -->
+                        <rect x="25" y="35" width="10" height="12" rx="1" fill="url(#logoGradient)" opacity="0.6"/>
+                        <rect x="27" y="37" width="6" height="1" fill="white" opacity="0.8"/>
+                        <rect x="27" y="39" width="6" height="1" fill="white" opacity="0.8"/>
+                        <rect x="27" y="41" width="4" height="1" fill="white" opacity="0.8"/>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-main">EduLearn</span>
+                        <span class="logo-tagline">Learn • Grow • Excel</span>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" data-page="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a></li>
+                <li><a href="#" class="nav-link" data-page="courses">
+                    <i class="fas fa-book-open"></i>
+                    <span>Courses</span>
+                </a></li>
+                <li><a href="#" class="nav-link" data-page="progress">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Progress</span>
+                </a></li>
+                <li><a href="#" class="nav-link" data-page="profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a></li>
+            </ul>
+            <div class="nav-profile">
+                <div class="profile-avatar">
+                    <img src="/placeholder.svg?height=40&width=40" alt="Profile" class="profile-img">
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="profile-info">
+                    <span class="profile-name">John Doe</span>
+                    <span class="profile-role">Student</span>
+                </div>
+                <div class="profile-dropdown">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Dashboard Page -->
+        <div id="dashboard" class="page active">
+            <div class="page-header">
+                <div class="header-content">
+                    <div class="welcome-section">
+                        <h1>Welcome back, John!</h1>
+                        <p>Continue your learning journey and achieve your goals</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn-secondary">
+                            <i class="fas fa-calendar"></i>
+                            Schedule
+                        </button>
+                        <button class="btn-primary">
+                            <i class="fas fa-plus"></i>
+                            New Course
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>Enrolled Courses</p>
+                        <div class="stat-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+2 this month</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>8</h3>
+                        <p>Completed</p>
+                        <div class="stat-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+3 this week</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>45h</h3>
+                        <p>Learning Time</p>
+                        <div class="stat-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+8h this week</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>5</h3>
+                        <p>Certificates</p>
+                        <div class="stat-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+1 this month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue Learning -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Continue Learning</h2>
+                    <button class="btn-text">View All</button>
+                </div>
+                <div class="course-grid">
+                    <div class="course-card continue">
+                        <div class="course-thumbnail">
+                            <img src="/placeholder.svg?height=200&width=300" alt="JavaScript Course">
+                            <div class="play-overlay" onclick="openVideoPlayer('JavaScript Fundamentals', 'Lesson 8: Functions', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4')">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="course-duration">8:45</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta-top">
+                                <span class="course-category">Programming</span>
+                                <div class="course-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            <h3>JavaScript Fundamentals</h3>
+                            <p>Master the basics of JavaScript programming and build dynamic web applications</p>
+                            <div class="progress-section">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                                <div class="progress-info">
+                                    <span>Lesson 8 of 12</span>
+                                    <span>65% Complete</span>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <button class="btn-primary" onclick="openVideoPlayer('JavaScript Fundamentals', 'Lesson 8: Functions', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4')">
+                                    <i class="fas fa-play"></i>
+                                    Continue Learning
+                                </button>
+                                <button class="btn-icon" title="Add to favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-card continue">
+                        <div class="course-thumbnail">
+                            <img src="/placeholder.svg?height=200&width=300" alt="React Course">
+                            <div class="play-overlay" onclick="openVideoPlayer('React Development', 'Lesson 4: Components', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4')">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="course-duration">12:30</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta-top">
+                                <span class="course-category">Frontend</span>
+                                <div class="course-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.9</span>
+                                </div>
+                            </div>
+                            <h3>React Development</h3>
+                            <p>Build modern web applications with React and learn component-based architecture</p>
+                            <div class="progress-section">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 30%"></div>
+                                </div>
+                                <div class="progress-info">
+                                    <span>Lesson 4 of 15</span>
+                                    <span>30% Complete</span>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <button class="btn-primary" onclick="openVideoPlayer('React Development', 'Lesson 4: Components', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4')">
+                                    <i class="fas fa-play"></i>
+                                    Continue Learning
+                                </button>
+                                <button class="btn-icon" title="Add to favorites">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Courses Page -->
+        <div id="courses" class="page">
+            <div class="page-header">
+                <div class="header-content">
+                    <div class="welcome-section">
+                        <h1>All Courses</h1>
+                        <p>Discover new skills and advance your career</p>
+                    </div>
+                </div>
+                <div class="search-filter">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search courses..." class="search-input">
+                    </div>
+                    <select class="filter-select">
+                        <option>All Categories</option>
+                        <option>Programming</option>
+                        <option>Design</option>
+                        <option>Business</option>
+                        <option>Marketing</option>
+                    </select>
+                    <select class="filter-select">
+                        <option>All Levels</option>
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-thumbnail">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Python Course">
+                        <div class="play-overlay" onclick="openVideoPlayer('Python for Beginners', 'Introduction to Python', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4')">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="course-duration">45:20</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta-top">
+                            <span class="course-badge beginner">Beginner</span>
+                            <div class="course-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <h3>Python for Beginners</h3>
+                        <p>Learn Python programming from scratch with hands-on projects</p>
+                        <div class="course-info">
+                            <span><i class="fas fa-play-circle"></i> 24 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 8 hours</span>
+                            <span><i class="fas fa-users"></i> 1.2k students</span>
+                        </div>
+                        <div class="course-price">
+                            <div class="price-info">
+                                <span class="price">$49.99</span>
+                                <span class="original-price">$79.99</span>
+                            </div>
+                            <button class="btn-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-thumbnail">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Web Design Course">
+                        <div class="play-overlay" onclick="openVideoPlayer('Web Design Masterclass', 'Design Principles', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4')">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="course-duration">1:20:15</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta-top">
+                            <span class="course-badge intermediate">Intermediate</span>
+                            <div class="course-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <h3>Web Design Masterclass</h3>
+                        <p>Create stunning websites with modern design principles and tools</p>
+                        <div class="course-info">
+                            <span><i class="fas fa-play-circle"></i> 32 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 12 hours</span>
+                            <span><i class="fas fa-users"></i> 856 students</span>
+                        </div>
+                        <div class="course-price">
+                            <div class="price-info">
+                                <span class="price">$79.99</span>
+                            </div>
+                            <button class="btn-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-thumbnail">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Data Science Course">
+                        <div class="play-overlay" onclick="openVideoPlayer('Data Science & Analytics', 'Introduction to Data Science', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4')">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="course-duration">2:15:30</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta-top">
+                            <span class="course-badge advanced">Advanced</span>
+                            <div class="course-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <h3>Data Science & Analytics</h3>
+                        <p>Master data analysis and machine learning with real-world projects</p>
+                        <div class="course-info">
+                            <span><i class="fas fa-play-circle"></i> 45 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 20 hours</span>
+                            <span><i class="fas fa-users"></i> 642 students</span>
+                        </div>
+                        <div class="course-price">
+                            <div class="price-info">
+                                <span class="price">$129.99</span>
+                            </div>
+                            <button class="btn-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-thumbnail">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Digital Marketing Course">
+                        <div class="play-overlay" onclick="openVideoPlayer('Digital Marketing', 'Marketing Fundamentals', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4')">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="course-duration">58:45</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta-top">
+                            <span class="course-badge beginner">Beginner</span>
+                            <div class="course-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                        <h3>Digital Marketing</h3>
+                        <p>Learn modern marketing strategies and grow your business online</p>
+                        <div class="course-info">
+                            <span><i class="fas fa-play-circle"></i> 28 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 10 hours</span>
+                            <span><i class="fas fa-users"></i> 2.1k students</span>
+                        </div>
+                        <div class="course-price">
+                            <div class="price-info">
+                                <span class="price">$59.99</span>
+                            </div>
+                            <button class="btn-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-thumbnail">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Mobile Development Course">
+                        <div class="play-overlay" onclick="openVideoPlayer('Mobile App Development', 'Getting Started with Mobile Development', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4')">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="course-duration">1:45:20</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta-top">
+                            <span class="course-badge intermediate">Intermediate</span>
+                            <div class="course-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <h3>Mobile App Development</h3>
+                        <p>Build iOS and Android applications with modern frameworks</p>
+                        <div class="course-info">
+                            <span><i class="fas fa-play-circle"></i> 38 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 15 hours</span>
+                            <span><i class="fas fa-users"></i> 934 students</span>
+                        </div>
+                        <div class="course-price">
+                            <div class="price-info">
+                                <span class="price">$99.99</span>
+                            </div>
+                            <button class="btn-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-thumbnail">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Cybersecurity Course">
+                        <div class="play-overlay" onclick="openVideoPlayer('Cybersecurity Fundamentals', 'Introduction to Cybersecurity', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4')">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="course-duration">2:30:45</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta-top">
+                            <span class="course-badge advanced">Advanced</span>
+                            <div class="course-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <h3>Cybersecurity Fundamentals</h3>
+                        <p>Protect systems and networks from cyber threats and attacks</p>
+                        <div class="course-info">
+                            <span><i class="fas fa-play-circle"></i> 35 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 18 hours</span>
+                            <span><i class="fas fa-users"></i> 567 students</span>
+                        </div>
+                        <div class="course-price">
+                            <div class="price-info">
+                                <span class="price">$149.99</span>
+                            </div>
+                            <button class="btn-primary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Page -->
+        <div id="progress" class="page">
+            <div class="page-header">
+                <div class="header-content">
+                    <div class="welcome-section">
+                        <h1>Learning Progress</h1>
+                        <p>Track your learning journey and achievements</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-overview">
+                <div class="progress-card">
+                    <h3>Overall Progress</h3>
+                    <div class="circular-progress">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring-circle" stroke="#e6e6e6" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                            <circle class="progress-ring-circle progress-ring-fill" stroke="#4CAF50" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" style="stroke-dasharray: 326.73; stroke-dashoffset: 130.69;"/>
+                        </svg>
+                        <div class="progress-text">60%</div>
+                    </div>
+                    <div class="progress-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">In Progress</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievements">
+                    <h3>Recent Achievements</h3>
+                    <div class="achievement-list">
+                        <div class="achievement-item">
+                            <div class="achievement-icon trophy">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>JavaScript Master</h4>
+                                <p>Completed JavaScript Fundamentals</p>
+                                <span class="achievement-date">2 days ago</span>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon medal">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Quick Learner</h4>
+                                <p>Completed 5 lessons in one day</p>
+                                <span class="achievement-date">1 week ago</span>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon star">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Perfect Score</h4>
+                                <p>Scored 100% on React Quiz</p>
+                                <span class="achievement-date">2 weeks ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-progress-list">
+                <h3>Course Progress</h3>
+                <div class="progress-item">
+                    <div class="progress-course-info">
+                        <img src="/placeholder.svg?height=60&width=60" alt="JavaScript">
+                        <div class="course-details">
+                            <h4>JavaScript Fundamentals</h4>
+                            <p>8 of 12 lessons completed</p>
+                            <div class="course-instructor">
+                                <i class="fas fa-user"></i>
+                                <span>John Smith</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-details">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 67%"></div>
+                        </div>
+                        <span class="progress-percentage">67%</span>
+                        <button class="btn-icon" onclick="openVideoPlayer('JavaScript Fundamentals', 'Next Lesson: Arrays', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4')">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-course-info">
+                        <img src="/placeholder.svg?height=60&width=60" alt="React">
+                        <div class="course-details">
+                            <h4>React Development</h4>
+                            <p>4 of 15 lessons completed</p>
+                            <div class="course-instructor">
+                                <i class="fas fa-user"></i>
+                                <span>Sarah Johnson</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-details">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 27%"></div>
+                        </div>
+                        <span class="progress-percentage">27%</span>
+                        <button class="btn-icon" onclick="openVideoPlayer('React Development', 'Next Lesson: State Management', 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4')">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="progress-item completed">
+                    <div class="progress-course-info">
+                        <img src="/placeholder.svg?height=60&width=60" alt="Python">
+                        <div class="course-details">
+                            <h4>Python for Beginners</h4>
+                            <p>24 of 24 lessons completed</p>
+                            <div class="course-instructor">
+                                <i class="fas fa-user"></i>
+                                <span>Mike Davis</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-details">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="progress-percentage">100%</span>
+                        <div class="completion-badge">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Page -->
+        <div id="profile" class="page">
+            <div class="page-header">
+                <div class="header-content">
+                    <div class="welcome-section">
+                        <h1>Profile Settings</h1>
+                        <p>Manage your account and preferences</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-section">
+                    <div class="profile-avatar-large">
+                        <img src="/placeholder.svg?height=120&width=120" alt="Profile">
+                        <div class="avatar-overlay">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h2>John Doe</h2>
+                        <p class="profile-title">Full Stack Developer</p>
+                        <p class="profile-member">Member since January 2024</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="number">12</span>
+                                <span class="label">Courses</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">8</span>
+                                <span class="label">Completed</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">5</span>
+                                <span class="label">Certificates</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-secondary">
+                        <i class="fas fa-edit"></i>
+                        Edit Profile
+                    </button>
+                </div>
+
+                <div class="profile-form">
+                    <div class="form-tabs">
+                        <button class="tab-button active" data-tab="personal">Personal Info</button>
+                        <button class="tab-button" data-tab="preferences">Preferences</button>
+                        <button class="tab-button" data-tab="security">Security</button>
+                    </div>
+
+                    <div class="tab-content active" id="personal">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" value="John Doe" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" value="john.doe@example.com" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Bio</label>
+                            <textarea class="form-input" rows="4">Passionate developer learning new technologies and building amazing projects.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Learning Goals</label>
+                            <input type="text" value="Master React, Learn Node.js, Get AWS Certified" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="preferences">
+                        <div class="form-group">
+                            <label>Language</label>
+                            <select class="form-input">
+                                <option>English</option>
+                                <option>Spanish</option>
+                                <option>French</option>
+                                <option>German</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Notifications</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                    Email notifications
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                    Course reminders
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Marketing emails
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="security">
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <input type="password" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn-secondary">Cancel</button>
+                        <button class="btn-primary">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Enhanced Video Player Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="video-header-info">
+                    <h3 id="videoTitle">Course Video</h3>
+                    <p id="lessonTitle">Lesson Title</p>
+                </div>
+                <div class="video-header-actions">
+                    <button class="btn-icon" id="fullscreenBtn" title="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button class="btn-icon close-btn" onclick="closeVideoPlayer()" title="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="video-container">
+                <video id="courseVideo" controls preload="metadata">
+                    <source src="/placeholder.svg" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay" id="videoOverlay">
+                    <div class="video-loading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading video...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="video-progress-section">
+                    <div class="lesson-progress">
+                        <span>Lesson Progress</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="lessonProgress" style="width: 0%"></div>
+                        </div>
+                        <span id="progressText">0%</span>
+                    </div>
+                </div>
+                <div class="video-controls">
+                    <button class="btn-secondary" id="prevLessonBtn">
+                        <i class="fas fa-step-backward"></i>
+                        Previous Lesson
+                    </button>
+                    <button class="btn-primary" id="markCompleteBtn">
+                        <i class="fas fa-check"></i>
+                        Mark as Complete
+                    </button>
+                    <button class="btn-secondary" id="nextLessonBtn">
+                        <i class="fas fa-step-forward"></i>
+                        Next Lesson
+                    </button>
+                </div>
+                <div class="video-notes">
+                    <h4>Lesson Notes</h4>
+                    <textarea placeholder="Add your notes here..." class="notes-input"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <svg class="logo-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="loadingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6366f1"/>
+                            <stop offset="50%" style="stop-color:#8b5cf6"/>
+                            <stop offset="100%" style="stop-color:#a855f7"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M30 15 L50 25 L30 35 L10 25 Z" fill="url(#loadingGradient)" class="logo-cap"/>
+                    <ellipse cx="30" cy="25" rx="20" ry="6" fill="url(#loadingGradient)" opacity="0.8"/>
+                    <circle cx="45" cy="20" r="3" fill="url(#loadingGradient)"/>
+                    <line x1="45" y1="23" x2="45" y2="30" stroke="url(#loadingGradient)" stroke-width="2"/>
+                    <rect x="25" y="35" width="10" height="12" rx="1" fill="url(#loadingGradient)" opacity="0.6"/>
+                </svg>
+            </div>
+            <div class="loading-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
